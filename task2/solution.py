@@ -1,3 +1,4 @@
+from time import perf_counter
 import csv
 import os
 from collections import defaultdict
@@ -36,5 +37,7 @@ def to_csv(counter):
 
 
 if __name__ == "__main__":
+    start = perf_counter()
     counter = get_animals_count()
     to_csv(counter)
+    print(f"end_time: {perf_counter() - start}")
